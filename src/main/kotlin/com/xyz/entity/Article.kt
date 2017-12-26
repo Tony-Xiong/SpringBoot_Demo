@@ -8,7 +8,7 @@ import javax.persistence.*
 @Table(name = "article")
 class Article  {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long = -1
     @Version
     var version: Long = 0

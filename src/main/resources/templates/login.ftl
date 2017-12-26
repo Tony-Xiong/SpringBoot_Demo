@@ -8,7 +8,7 @@
     <title>login</title>
 </head>
 <body>
-<form id="login" name="user" action="./welcome" method="post">
+<form id="login" name="user" action="./check" method="post">
 <div>
     <div>用户名：</div><div><input id="name" name="name"></div>
     <div>密 码：</div><div><input id="passwd" name="passwd"></div>

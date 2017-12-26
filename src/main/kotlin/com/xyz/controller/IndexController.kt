@@ -2,7 +2,6 @@ package com.xyz.controller
 
 import com.xyz.entity.User
 import com.xyz.service.UserService
-import com.xyz.dao.UserDao
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.boot.autoconfigure.domain.EntityScan
@@ -25,8 +24,6 @@ class IndexController {
     @Autowired
     lateinit var userService : UserService
 
-    @Autowired
-    lateinit var userDao : UserDao
 
     @RequestMapping("/")
     fun home(m:Model):String{
@@ -39,17 +36,23 @@ class IndexController {
         return "login"
     }
 
-    @RequestMapping("/welcome",params = ["name","passwd"])
-    fun welcome(m: Model,@RequestParam map:HashMap<String,String>): ModelAndView {
+/*    @RequestMapping("/welcome")
+    fun welcome(m: Model,@RequestParam map:HashMap<String,String>): String {
         val name = map["name"]
         m.addAttribute("userName",name)
-        return ModelAndView("welcome")
+        return "welcome"
+    }*/
+    @RequestMapping("/check",params = ["name","passwd"])
+    fun checkUser(m: Model,@RequestParam map:HashMap<String,String>): String {
+        val user : User = User().toUser(map)
+    return if (userService.checkUser(user)){
+        m.addAttribute("userName",map["name"])
+        "welcome"
+    }else {
+        "redirect:/login"
+    }
     }
 
-    @RequestMapping("/welcome")
-    fun welcome(): String {
-        return "redirect:/login"
-    }
 
     @RequestMapping("/register")
     fun register(): String {
@@ -58,15 +61,10 @@ class IndexController {
     @RequestMapping("/registerUser")
     fun user(@RequestParam map:HashMap<String,String>): String {
         println(map.toString())
-        var user: User = User()
-        val name = map["name"]
-        val passwd = map["passwd"]
-        val id : Int = map["id"]!!.toInt()
-        user.user = name!!
-        user.passwd = passwd!!
-        user.id = id!!
-        println("${user.toString()}")
-        userService.saveUser(user)
-        return "login"
+        val user: User = User().toUser(map)
+        if(userService.saveUser(user)) {
+            return "regSucceed"
+        }
+        return "register"
     }
 }
