@@ -9,7 +9,7 @@ import javax.persistence.*
     @Column var passwd = ""
     @Id
     @GeneratedValue
-    var id :String = ""
+    var id :Int = 0
     @Column var phone_num = ""
     @Column var email = ""
     @Column var address = ""

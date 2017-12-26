@@ -1,4 +1,4 @@
-package com.xyz.service.dao
+package com.xyz.dao
 
 import com.xyz.entity.User
 import org.springframework.data.repository.CrudRepository
