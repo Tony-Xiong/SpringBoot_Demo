@@ -31,4 +31,9 @@ import org.springframework.transaction.annotation.Transactional
         val passwd = userIn.passwd
         return userDao.checkUser(name, passwd).size == 1
     }
+
+    @Transactional
+    fun getAll() : List<User>{
+        return userDao.findAll().toList()
+    }
 }
