@@ -1,5 +1,6 @@
 package com.xyz.controller
 
+
 import com.xyz.entity.User
 import com.xyz.service.UserService
 import org.springframework.beans.factory.annotation.Autowired
@@ -10,8 +11,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RequestMethod
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.servlet.ModelAndView
+import org.springframework.web.servlet.mvc.support.RedirectAttributes
 
 @EnableAutoConfiguration
 @ComponentScan(basePackages = ["com.xyz"])
@@ -36,18 +39,23 @@ class IndexController {
         return "login"
     }
 
-/*    @RequestMapping("/welcome")
+    @RequestMapping("/welcome",method = [RequestMethod.POST])
     fun welcome(m: Model,@RequestParam map:HashMap<String,String>): String {
         val name = map["name"]
         m.addAttribute("userName",name)
         return "welcome"
-    }*/
+    }
     @RequestMapping("/check",params = ["name","passwd"])
-    fun checkUser(m: Model,@RequestParam map:HashMap<String,String>): String {
+    fun checkUser(attr: RedirectAttributes,@RequestParam map:HashMap<String,String>): String {
         val user : User = User().toUser(map)
     return if (userService.checkUser(user)){
-        m.addAttribute("userName",map["name"])
-        "welcome"
+        val name = map["name"]
+        attr.addFlashAttribute("name",name)
+        println("""${attr.flashAttributes}
+            |
+            |${attr.toString()}
+        """.trimMargin())
+        "redirect:/welcome/"
     }else {
         "redirect:/login"
     }
