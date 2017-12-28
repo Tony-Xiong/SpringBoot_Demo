@@ -7,6 +7,7 @@ import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.servlet.ModelAndView
 import com.xyz.repository.ArticleRepository
+import com.xyz.service.ArticleService
 import org.springframework.context.annotation.Configuration
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.ResponseBody
@@ -18,7 +19,7 @@ import java.util.*
 @Controller
 class BlogController{
 
-    @Autowired lateinit var articleRepository : ArticleRepository
+    @Autowired lateinit var articleService : ArticleService
 /*init Article data
     @Bean
     fun init(repository: ArticleRepository) = CommandLineRunner {
@@ -32,7 +33,7 @@ class BlogController{
 
     @GetMapping("listAllArticleView")
     fun listAllArticleView(model: Model): ModelAndView {
-        model.addAttribute("articles", articleRepository?.findAll())
+        model.addAttribute("articles", articleService.findAll())
         return ModelAndView("blog/list")
     }
 
@@ -42,12 +43,12 @@ class BlogController{
         article.gmtCreated = Date()
         article.gmtModified = Date()
         article.version = 0
-        return articleRepository?.save(article)
+        return articleService.save(article)
     }
 
     @GetMapping("detailArticleView")
     fun detailArticleView(id: Long, model: Model): ModelAndView {
-        model.addAttribute("article", articleRepository?.findById(id)?.get())
+        model.addAttribute("article", articleService.findById(id))
         return ModelAndView("blog/detailArticleView")
     }
 
