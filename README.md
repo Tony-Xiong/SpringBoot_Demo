@@ -1,3 +1,5 @@
 # SpringBoot_Demo
-### a exmaple build by springboot,freemaker,spring data jpa,flat UI,Kotlin
-### just a example
+### A example used SpringBoot,Freemarker,spring data jpa,Flat UI and Kotlin
+### Just a example.
+### Project build by Gradle.
+
