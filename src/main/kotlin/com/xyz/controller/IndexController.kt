@@ -10,19 +10,15 @@ import org.springframework.context.annotation.ComponentScan
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
-import org.springframework.web.bind.annotation.RequestAttribute
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
 import org.springframework.web.bind.annotation.RequestParam
-import org.springframework.web.servlet.ModelAndView
 import org.springframework.web.servlet.mvc.support.RedirectAttributes
-import org.springframework.web.servlet.view.RedirectView
-import javax.servlet.http.HttpSession
 
 @EnableAutoConfiguration
 @ComponentScan(basePackages = ["com.xyz"])
 @EntityScan("com.xyz.entity")
-@EnableJpaRepositories("com.xyz.dao")
+@EnableJpaRepositories("com.xyz.repository")
 
 @Controller
 class IndexController {

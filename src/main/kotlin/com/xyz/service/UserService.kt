@@ -2,7 +2,7 @@ package com.xyz.service
 
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
-import com.xyz.dao.UserDao
+import com.xyz.repository.UserRepository
 import com.xyz.entity.User
 import org.springframework.transaction.annotation.Transactional
 
@@ -11,12 +11,12 @@ import org.springframework.transaction.annotation.Transactional
  class UserService  {
 
     @Autowired
-    lateinit var  userDao : UserDao
+    lateinit var userRepository: UserRepository
 
     @Transactional
     fun saveUser(userIn : User) : Boolean {
         try {
-            userDao.save(userIn)
+            userRepository.save(userIn)
             return true
         }
         catch (e : Exception ){
@@ -29,11 +29,11 @@ import org.springframework.transaction.annotation.Transactional
     fun checkUser(userIn: User) : Boolean{
         val name = userIn.user
         val passwd = userIn.passwd
-        return userDao.checkUser(name, passwd).size == 1
+        return userRepository.checkUser(name, passwd).size == 1
     }
 
     @Transactional
     fun getAll() : List<User>{
-        return userDao.findAll().toList()
+        return userRepository.findAll().toList()
     }
 }

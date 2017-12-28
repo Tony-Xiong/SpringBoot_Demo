@@ -1,4 +1,4 @@
-package com.xyz.dao
+package com.xyz.repository
 
 import com.xyz.entity.Article
 import org.springframework.data.jpa.repository.JpaRepository
