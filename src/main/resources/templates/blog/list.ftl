@@ -1,12 +1,16 @@
 <html>
 <head>
     <#include "common/head.ftl">
+    <link rel="stylesheet" href="/dataTables/jquery.dataTables.min.css">
+    <script src="/dataTables/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="/blog/blog.css">
+    <script src="/blog/blog.js"></script>
 </head>
 <body>
 <#include "common/navbar.ftl">
 <div class="container">
     <h1>我的博客</h1>
-    <table class="table table-responsive table-bordered">
+    <table id="articlesDataTable" class="table table-responsive table-bordered">
         <thead>
         <th>序号</th>
         <th>标题</th>
@@ -19,7 +23,7 @@
         <#list articles as article>
         <tr>
             <td>${article.id}</td>
-            <td>${article.title}</td>
+            <td><a target="_blank" href="detailArticleView?id=${article.id}">${article.title}</a></td>
             <td>${article.author}</td>
             <td>${article.gmtModified}</td>
             <td><a href="#" target="_blank">编辑</a></td>

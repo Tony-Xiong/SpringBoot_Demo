@@ -20,13 +20,13 @@
                         Kotlin <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="http://www.jianshu.com/nb/12976878" target="_blank">Kotlin极简教程</a></li>
+                        <li><a href="http://www.jianshu.com/nb/12976878" target="_blank">我的信息</a></li>
                         <li class="divider"></li>
-                        <li><a href="#">Java</a></li>
-                        <li><a href="#">Scala</a></li>
-                        <li><a href="#">Groovy</a></li>
+                        <li><a href="#">修改用户信息</a></li>
+                        <li><a href="#">个人博客</a></li>
+                        <li><a href="#">个人信息</a></li>
                         <li class="divider"></li>
-                        <li><a href="http://www.jianshu.com/nb/12066555" target="_blank">SpringBoot极简教程</a></li>
+                        <li><a href="http://www.jianshu.com/nb/12066555" target="_blank">特别鸣谢</a></li>
                     </ul>
                 </li>
             </ul>

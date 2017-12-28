@@ -19,5 +19,9 @@
     <script src="/Flat-UI/dist/js/vendor/html5shiv.js"></script>
     <script src="/Flat-UI/dist/js/vendor/respond.min.js"></script>
 
-    <link rel="stylesheet" href="/blog/blog.css">
-    <script src="/blog/blog.js"></script>
+    <script src="/mditor/dist/js/mditor.js"></script>
+    <link rel="stylesheet" href="/mditor/dist/css/mditor.css">
+
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>

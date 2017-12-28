@@ -1,11 +1,18 @@
 package com.xyz.controller
 
+import com.xyz.entity.Article
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.servlet.ModelAndView
 import com.xyz.repository.ArticleRepository
+import org.springframework.context.annotation.Configuration
+import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.ResponseBody
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
+import java.util.*
 
 
 @Controller
@@ -28,5 +35,21 @@ class BlogController{
         model.addAttribute("articles", articleRepository?.findAll())
         return ModelAndView("blog/list")
     }
+
+    @PostMapping("saveArticle")
+    @ResponseBody
+    fun saveArticle(article: Article): Article? {
+        article.gmtCreated = Date()
+        article.gmtModified = Date()
+        article.version = 0
+        return articleRepository?.save(article)
+    }
+
+    @GetMapping("detailArticleView")
+    fun detailArticleView(id: Long, model: Model): ModelAndView {
+        model.addAttribute("article", articleRepository?.findById(id)?.get())
+        return ModelAndView("blog/detailArticleView")
+    }
+
 
 }

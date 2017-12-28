@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
+<head>
 <#include "common/head.ftl">
+    <script src="./blog/addArticleView.js"></script>
+</head>
 <body>
+<#include "common/navbar.ftl">
 <div class="container">
     <h2>写文章</h2>
 
