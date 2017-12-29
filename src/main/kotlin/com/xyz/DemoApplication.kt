@@ -10,5 +10,5 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 class DemoApplication
 
 fun main(args: Array<String>) {
-    SpringApplication.run(IndexController::class.java,*args)
+    SpringApplication.run(DemoApplication::class.java,*args)
 }

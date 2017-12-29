@@ -4,10 +4,6 @@ package com.xyz.controller
 import com.xyz.entity.User
 import com.xyz.service.UserService
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration
-import org.springframework.boot.autoconfigure.domain.EntityScan
-import org.springframework.context.annotation.ComponentScan
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.RequestMapping
@@ -15,10 +11,11 @@ import org.springframework.web.bind.annotation.RequestMethod
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.servlet.mvc.support.RedirectAttributes
 
-@EnableAutoConfiguration
-@ComponentScan(basePackages = ["com.xyz"])
-@EntityScan("com.xyz.entity")
-@EnableJpaRepositories("com.xyz.repository")
+//不必要的扫描，之前把index的controller作为主类，所以要加，改过了启动main函数之后，这些都是不必要的扫描
+//@EnableAutoConfiguration
+//@ComponentScan(basePackages = ["com.xyz"])
+//@EntityScan("com.xyz.entity")
+//@EnableJpaRepositories("com.xyz.repository")
 
 @Controller
 class IndexController {
