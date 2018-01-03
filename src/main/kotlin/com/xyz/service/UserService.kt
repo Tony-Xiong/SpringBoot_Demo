@@ -3,18 +3,30 @@ package com.xyz.service
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import com.xyz.repository.UserRepository
-import com.xyz.entity.User
+import com.xyz.entity.Users
+import org.springframework.security.core.userdetails.UserDetails
+import org.springframework.security.core.userdetails.UserDetailsService
 import org.springframework.transaction.annotation.Transactional
 
 
+
 @Service
- class UserService  {
+ class UserService : UserDetailsService  {
 
     @Autowired
     lateinit var userRepository: UserRepository
 
+    override fun loadUserByUsername(username: String): UserDetails {
+        val user : Users = userRepository.findByLoginName(username) ?: error("用户名不存在")
+        println("""
+            s:$username
+            username:${user.username}   password:${user.password}     roles:${user.getRoles()[0]}     details:${user.userDetail.cname}
+        """.trimIndent())
+        return user
+    }
+
     @Transactional
-    fun saveUser(userIn : User) : Boolean {
+    fun saveUser(userIn : Users) : Boolean {
         try {
             userRepository.save(userIn)
             return true
@@ -25,15 +37,9 @@ import org.springframework.transaction.annotation.Transactional
         return false
     }
 
-    @Transactional
-    fun checkUser(userIn: User) : Boolean{
-        val name = userIn.user
-        val passwd = userIn.passwd
-        return userRepository.checkUser(name, passwd).size == 1
-    }
 
     @Transactional
-    fun getAll() : List<User>{
+    fun getAll() : List<Users>{
         return userRepository.findAll().toList()
     }
 }

@@ -2,13 +2,13 @@ package com.xyz.controller
 
 import org.springframework.context.annotation.Configuration
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer
 
 @Configuration
-class WebMvcConfig : WebMvcConfigurerAdapter() {
+class WebMvcConfig : WebMvcConfigurer {
     // 注册简单请求转发跳转View的RequestMapping Controller
-    override fun addViewControllers(registry: ViewControllerRegistry?) {
+    override fun addViewControllers(registry: ViewControllerRegistry) {
         //写文章的RequestMapping
-        registry?.addViewController("addArticleView")?.setViewName("blog/addArticleView")
+        registry.addViewController("addArticleView").setViewName("blog/addArticleView")
     }
 }

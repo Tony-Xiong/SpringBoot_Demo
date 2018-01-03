@@ -1,21 +1,23 @@
 package com.xyz.controller
 
 import com.xyz.service.UserService
-import com.xyz.entity.User
-import org.springframework.beans.factory.annotation.Autowired
+import com.xyz.entity.Users
 import org.springframework.context.annotation.Bean
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
+import javax.annotation.Resource
 
 @RestController
 @RequestMapping("/REST")
 class RestController{
 
-    @Autowired lateinit var userService : UserService
+    @Resource
+    var userService : UserService = UserService()
 
     @RequestMapping("/getAll")
-    fun getAll(): List<User> {
+    fun getAll(): List<Users>? {
         println(test())
+        println(userService.getAll().toString())
         return userService.getAll()
     }
 
