@@ -11,6 +11,8 @@ class ArticleService {
 
     fun findAll(): List<Article> = articleRepository.findAll()
 
+    fun findAllByAuthor(author : String) : List<Article> = articleRepository.findAllByAuthor(author)
+
     fun save(article : Article): Article = articleRepository.save(article)
 
     fun findById(id: Long): Article =  articleRepository.findById(id).get()

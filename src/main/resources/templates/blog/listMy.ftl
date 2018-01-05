@@ -9,7 +9,7 @@
 <body>
 <#include "common/navbar.ftl">
 <div class="container">
-    <h1>全部博客</h1>
+    <h1>${author}的博客</h1>
     <table id="articlesDataTable" class="table table-responsive table-bordered">
         <thead>
         <th>序号</th>

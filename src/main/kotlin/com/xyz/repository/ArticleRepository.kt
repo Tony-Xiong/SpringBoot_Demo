@@ -3,4 +3,6 @@ package com.xyz.repository
 import com.xyz.entity.Article
 import org.springframework.data.jpa.repository.JpaRepository
 
-interface ArticleRepository : JpaRepository <Article,Long>
+interface ArticleRepository : JpaRepository <Article,Long> {
+    fun findAllByAuthor(author : String): List<Article>
+}

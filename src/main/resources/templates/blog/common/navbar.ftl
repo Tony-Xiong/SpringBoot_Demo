@@ -14,11 +14,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">我的博客</a>
+            <a class="navbar-brand" href="<@spring.url '/listAllArticleView'/>">博客首页</a>
         </div>
         <div class="collapse navbar-collapse" id="example-navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class=""><a href="listAllArticleView">文章列表</a></li>
+                <li class=""><a href="<@spring.url '/listMyArticleView'/>">我的博客</a></li>
                 <li class="active"><a href="addArticleView">写文章</a></li>
                 <li><a href="#">关于</a></li>
                 <li class="dropdown">
@@ -32,7 +32,7 @@
                         <li><a href="#">个人博客</a></li>
                         <li><a href="#">个人信息</a></li>
                         <li class="divider"></li>
-                        <li><form id="logout" action="<@spring.url '/logout' />" method="POST" ><input type="submit" id="logout" name="submit" />
+                        <li><form id="logout" action="<@spring.url '/logout' />" method="POST" ><input type="submit" id="logout" name="submit" value="注销"/>
                             <input type="hidden" name="_csrf" value="${_csrf.token}"></form></li>
                     </ul>
                 </li>

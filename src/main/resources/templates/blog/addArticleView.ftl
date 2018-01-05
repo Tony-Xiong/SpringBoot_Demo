@@ -24,6 +24,7 @@
                 <button type="submit" class="btn btn-primary" id="addArticleBtn">保存并发表</button>
             </div>
         </div>
+        <input type="hidden" name="_csrf" value="${_csrf.token}">
     </form>
 </div>
 </body>
