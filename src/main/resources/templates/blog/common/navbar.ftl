@@ -1,3 +1,9 @@
+<#import "/spring.ftl" as spring />
+<script type="application/javascript">
+    function logout() {
+        $("#logout").ajax({},{})
+    }
+</script>
 <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -26,7 +32,8 @@
                         <li><a href="#">个人博客</a></li>
                         <li><a href="#">个人信息</a></li>
                         <li class="divider"></li>
-                        <li><a href="http://www.jianshu.com/nb/12066555" target="_blank">特别鸣谢</a></li>
+                        <li><form id="logout" action="<@spring.url '/logout' />" method="POST" ><input type="submit" id="logout" name="submit" />
+                            <input type="hidden" name="_csrf" value="${_csrf.token}"></form></li>
                     </ul>
                 </li>
             </ul>

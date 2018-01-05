@@ -1,3 +1,4 @@
+<#assign security=JspTaglibs["http://www.springframework.org/security/tags"]/>
 <!doctype html>
 <html lang="en">
 <head>
@@ -11,6 +12,13 @@
 <h1>Hello World!</h1>
 <div><p>This is the first page!</p></div>
 <a href="./login">login page</a>
-<div>author:${name}</div>
+<#if Session.SPRING_SECURITY_CONTEXT?exists>
+<div>user:${Session.SPRING_SECURITY_CONTEXT.authentication.principal.username!"null"}</div>
+</#if>
+
+
+<@security.authorize access="hasRole('ROLE_ADMIN')">
+   admin will see
+</@security.authorize>
 </body>
 </html>

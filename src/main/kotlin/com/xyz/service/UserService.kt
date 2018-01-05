@@ -18,10 +18,6 @@ import org.springframework.transaction.annotation.Transactional
 
     override fun loadUserByUsername(username: String): UserDetails {
         val user : Users = userRepository.findByLoginName(username) ?: error("用户名不存在")
-        println("""
-            s:$username
-            username:${user.username}   password:${user.password}     roles:${user.getRoles()[0]}     details:${user.userDetail.cname}
-        """.trimIndent())
         return user
     }
 
