@@ -65,11 +65,27 @@ class BlogController{
         return articleService.save(article)
     }
 
+    @PostMapping("updateArticle")
+    @ResponseBody
+    fun updateArticle(article: Article): Article? {
+        var userDetails : Users = SecurityContextHolder.getContext()
+                .authentication.principal as Users
+        var author : String = userDetails.username
+        article.author = author
+        article.gmtModified = Date()
+        return articleService.save(article)
+    }
+
     @GetMapping("detailArticleView")
     fun detailArticleView(id: Long, model: Model): ModelAndView {
         model.addAttribute("article", articleService.findById(id))
         return ModelAndView("blog/detailArticleView")
     }
 
+    @GetMapping("editArticle")
+    fun editArticle(id:Long,model:Model):ModelAndView {
+        model.addAttribute("article",articleService.findById(id))
+        return ModelAndView("blog/editArticle")
+    }
 
 }
