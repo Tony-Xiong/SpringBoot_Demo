@@ -2,7 +2,7 @@
 <html>
 <head>
 <#include "common/head.ftl">
-    <script src="./blog/addArticleView.js"></script>
+    <script src="/static/blog/addArticleView.js"></script>
 </head>
 <body>
 <#include "common/navbar.ftl">

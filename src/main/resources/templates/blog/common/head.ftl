@@ -5,24 +5,25 @@
 
     <meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=1.0">
     <!-- Loading Bootstrap -->
-    <link href="/Flat-UI/dist/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Loading Flat UI -->
-    <link href="/Flat-UI/dist/css/flat-ui.css" rel="stylesheet">
-    <link href="/Flat-UI/docs/assets/css/demo.css" rel="stylesheet">
+    <link href="/static/css/flat-ui.css" rel="stylesheet">
+    <link href="/static/css/demo.css" rel="stylesheet">
 
-    <link rel="shortcut icon" href="/Flat-UI/img/favicon.ico">
+    <link rel="shortcut icon" href="/static/img/favicon.ico">
 
-    <script src="/Flat-UI/dist/js/vendor/jquery.min.js"></script>
-    <script src="/Flat-UI/dist/js/flat-ui.js"></script>
-    <script src="/Flat-UI/dist/js/vendor/html5shiv.js"></script>
-    <script src="/Flat-UI/dist/js/vendor/respond.min.js"></script>
+    <script src="/static/js/vendor/jquery.min.js"></script>
+    <script src="/static/js/flat-ui.js"></script>
+    <script src="/static/js/vendor/html5shiv.js"></script>
+    <script src="/static/js/vendor/respond.min.js"></script>
 
-    <script src="/mditor/dist/js/mditor.js"></script>
-    <link rel="stylesheet" href="/mditor/dist/css/mditor.css">
-
-    <link rel="stylesheet"
-          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="/static/js/mditor.js"></script>
+    <link rel="stylesheet" href="/static/css/mditor.css">
     <!-- init style -->
-    <link rel="stylesheet" href="blog/blog.css">
+    <link rel="stylesheet" href="/static/blog/blog.css">
+    <meta content="${_csrf.token}" name="csrf-token">
+    <!-- highlight -->
+    <link rel="stylesheet"
+          href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>

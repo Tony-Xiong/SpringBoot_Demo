@@ -1,14 +1,14 @@
 <#import "/spring.ftl" as spring />
 <!doctype html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>login</title>
-    <link rel="stylesheet" href="<@spring.url '/css/bootstrap.css' />">
-    <link rel="stylesheet" href="<@spring.url '/css/signin.css' />">
+    <link rel="stylesheet" href="<@spring.url 'static/css/bootstrap.css' />">
+    <link rel="stylesheet" href="<@spring.url 'static/css/signin.css' />">
     <style type="text/css">
         body {
             padding-top: 50px;
@@ -36,10 +36,10 @@
 </nav>
 <div class="container">
     <div class="starter-template">
- <#--       <#assign logout ></#assign>
-        <#if logout= 0><p  class="bg-warning">已注销</p>
-        <#elseif error != 0><p  class="bg-danger">有错误，请重试</p>
-        </#if>-->
+        <#assign params=RequestParameters>
+        <#if params["logout"]??><p  class="bg-warning">已注销</p>
+        <#elseif params["error"]??><p  class="bg-danger">有错误，请重试。</p>
+        </#if>
         <h2>使用账号密码登录</h2>
         <form class="form-signin" role="form" name="form" action="<@spring.url '/login' />" method="POST">
             <div class="form-group">

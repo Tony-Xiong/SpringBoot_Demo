@@ -1,10 +1,6 @@
 package com.xyz.controller
 
 
-
-
-import org.springframework.security.core.context.SecurityContextHolder
-import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.RequestMapping
@@ -20,9 +16,6 @@ import javax.servlet.http.HttpSession
 @Controller
 class IndexController {
 
-
-
-
     @RequestMapping("/")
     fun home(m:Model,session: HttpSession):String{
         m.addAttribute("name","XYZ")
@@ -30,8 +23,4 @@ class IndexController {
         return "index"
     }
 
-//    @GetMapping("/login")
-//    fun login():String{
-//        return "login"
-//    }
 }

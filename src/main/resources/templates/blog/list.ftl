@@ -1,10 +1,10 @@
 <html>
 <head>
     <#include "common/head.ftl">
-    <link rel="stylesheet" href="/dataTables/jquery.dataTables.min.css">
-    <script src="/dataTables/jquery.dataTables.min.js"></script>
-    <link rel="stylesheet" href="/blog/blog.css">
-    <script src="/blog/blog.js"></script>
+    <link rel="stylesheet" href="/static/css/jquery.dataTables.min.css">
+    <script src="/static/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="/static/blog/blog.css">
+    <script src="/static/blog/blog.js"></script>
 </head>
 <body>
 <#include "common/navbar.ftl">
