@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="/static/css/mditor.css">
     <!-- init style -->
     <link rel="stylesheet" href="/static/blog/blog.css">
-    <meta content="${_csrf.token}" name="csrf-token">
+    <#--<meta content="${_csrf.token}" name="csrf-token">-->
     <!-- highlight -->
     <link rel="stylesheet"
           href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">

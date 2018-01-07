@@ -11,8 +11,8 @@
 <body>
 <#include "common/navbar.ftl">
 <div class="starter-template">
-    <h3>Register Succeed</h3>
-    <a href="/login">check to return to login page</a>
+    <h3>Register Failed</h3>
+    <a href="/register/new">check to return to register page</a>
 </div>
 
 </body>

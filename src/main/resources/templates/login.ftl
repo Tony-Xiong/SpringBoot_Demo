@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>login</title>
     <link rel="stylesheet" href="<@spring.url 'static/css/bootstrap.css' />">
+    <link rel="stylesheet" href="<@spring.url 'static/css/flat-ui.css' />">
     <link rel="stylesheet" href="<@spring.url 'static/css/signin.css' />">
     <style type="text/css">
         body {
@@ -24,7 +25,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">Spring Security演示</a>
+            <a class="navbar-brand" href="#">BLOG</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
@@ -40,7 +41,7 @@
         <#if params["logout"]??><p  class="bg-warning">已注销</p>
         <#elseif params["error"]??><p  class="bg-danger">有错误，请重试。</p>
         </#if>
-        <h2>使用账号密码登录</h2>
+        <h3>使用账号密码登录</h3>
         <form class="form-signin" role="form" name="form" action="<@spring.url '/login' />" method="POST">
             <div class="form-group">
                 <label for="username">账号</label>

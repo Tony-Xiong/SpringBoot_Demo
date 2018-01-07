@@ -1,4 +1,7 @@
 /* Prettyfy Theme */
+.boarder-bottom{
+  border-bottom: 2px solid #dddddd;
+}
 .prettyprint {
   background-color: #F7F7F9;
   font-family: Menlo, 'Bitstream Vera Sans Mono', 'DejaVu Sans Mono', Monaco, Consolas, monospace;
@@ -93,7 +96,7 @@ ol.linenums {
   margin-bottom: 0;
 }
 .container {
-  width: 970px !important;
+  /*width: 970px !important;*/
 }
 .demo-headline {
   padding: 73px 0 110px;

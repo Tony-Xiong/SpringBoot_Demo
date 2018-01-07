@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
+import org.springframework.web.servlet.ModelAndView
 import javax.annotation.Resource
 
 
@@ -18,13 +19,17 @@ class RegisterController{
     var userService : UserService = UserService()
 
     @GetMapping("new")
-    fun addUserPage(): String {
-        return "register"
+    fun addUserPage(): ModelAndView {
+        return ModelAndView("register")
     }
     @PostMapping("reg")
     fun addUser(@RequestParam map : HashMap<String,String>) : String{
         val user = Users()
         user.addMap(map)
-        return if (userService.saveUser(user)){"regSucceed"}else{"regFailed"}
+        return if(userService.getUserByUsername(user.username)==null){
+            if (userService.saveUser(user)){"regSucceed"}else{"regFailed"}
+        }else{
+            "regFailed"
+        }
     }
 }

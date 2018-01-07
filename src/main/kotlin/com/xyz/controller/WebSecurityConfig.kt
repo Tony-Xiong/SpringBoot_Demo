@@ -39,7 +39,7 @@ import org.springframework.security.core.userdetails.UserDetailsService
 
     override fun configure(web: WebSecurity) {
         web.ignoring()
-                .antMatchers("/css/**")
+                .antMatchers("/static/**")
                 .antMatchers("/register/**")
                 .antMatchers("/error")
     }

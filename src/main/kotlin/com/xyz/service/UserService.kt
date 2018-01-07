@@ -30,9 +30,15 @@ import org.springframework.transaction.annotation.Transactional
         catch (e : Exception ){
             println(e)
         }
-        return false
+        finally {
+            return false
+        }
     }
 
+    @Transactional
+    fun getUserByUsername(username: String):Users?{
+        return userRepository.findByLoginName(username)
+    }
 
     @Transactional
     fun getAll() : List<Users>{

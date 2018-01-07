@@ -14,7 +14,7 @@ import javax.persistence.*
         private var loginName : String = ""
         private var passwd : String = ""
 
-        @OneToOne
+        @OneToOne(cascade = [CascadeType.ALL])
         @JoinColumn(name = "parentId")
         var userDetail : UserDetail = UserDetail()
 
