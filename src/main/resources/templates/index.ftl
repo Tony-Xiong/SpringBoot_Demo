@@ -11,6 +11,9 @@
 </head>
 <body>
 <#include "blog/common/navbar.ftl">
+<script type="application/javascript">
+
+</script>
 <div class="container">
     <div class="col-12 col-md-9">
         <div class="jumbotron">

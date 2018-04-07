@@ -6,6 +6,9 @@
 </head>
 <body>
 <#include "common/navbar.ftl">
+<script type="application/javascript">
+    $("#write").addClass("active");
+</script>
 <div class="container">
     <h3>写文章</h3>
 

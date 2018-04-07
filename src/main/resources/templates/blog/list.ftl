@@ -8,6 +8,9 @@
 </head>
 <body>
 <#include "common/navbar.ftl">
+<script type="application/javascript">
+    $("#blogs").addClass("active");
+</script>
 <div class="container">
     <h1>全部博客</h1>
     <table id="articlesDataTable" class="table table-responsive table-bordered">
@@ -16,7 +19,7 @@
         <th>标题</th>
         <th>作者</th>
         <th>发表时间</th>
-        <th>操作</th>
+        <#--<th>操作</th>-->
         </thead>
         <tbody>
         <#-- 使用FTL指令 -->
@@ -26,7 +29,7 @@
             <td><a target="_blank" href="detailArticleView?id=${article.id}">${article.title}</a></td>
             <td>${article.author}</td>
             <td>${article.gmtModified}</td>
-            <td><a href="#" target="_blank">编辑</a></td>
+            <#--<td><a href="#" target="_blank">编辑</a></td>-->
         </tr>
         </#list>
         </tbody>

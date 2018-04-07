@@ -21,6 +21,7 @@ import org.springframework.transaction.annotation.Transactional
         return user
     }
 
+    @Suppress("UNREACHABLE_CODE")
     @Transactional
     fun saveUser(userIn : Users) : Boolean {
         try {

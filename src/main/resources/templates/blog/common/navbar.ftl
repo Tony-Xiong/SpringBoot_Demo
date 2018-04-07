@@ -17,14 +17,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="<@spring.url '/'/>">首页</a>
+            <a id="index" class="navbar-brand" href="<@spring.url '/'/>">首页</a>
         </div>
         <div class="collapse navbar-collapse" id="example-navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class=""><a href="<@spring.url '/listAllArticleView'/>">全部博客</a></li>
-                <li class=""><a href="<@spring.url '/listMyArticleView'/>">我的博客</a></li>
-                <li class="active"><a href="<@spring.url '/addArticleView'/>">写文章</a></li>
-                <li><a href="#">关于</a></li>
+                <li id="blogs" class=""><a href="<@spring.url '/listAllArticleView'/>">全部博客</a></li>
+                <li id="myblogs" class=""><a href="<@spring.url '/listMyArticleView'/>">我的博客</a></li>
+                <li id="write" class=""><a href="<@spring.url '/addArticleView'/>">写文章</a></li>
+                <li id="about"><a href="#">关于</a></li>
                 <#if Session.SPRING_SECURITY_CONTEXT??>
                 <li class="dropdown">
                     <a href="http://www.jianshu.com/nb/12976878" class="dropdown-toggle" data-toggle="dropdown">

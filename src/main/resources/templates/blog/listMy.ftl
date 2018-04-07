@@ -8,6 +8,9 @@
 </head>
 <body>
 <#include "common/navbar.ftl">
+<script type="application/javascript">
+    $("#myblogs").addClass("active");
+</script>
 <div class="container">
     <h1>${author}的博客</h1>
     <table id="articlesDataTable" class="table table-responsive table-bordered">
