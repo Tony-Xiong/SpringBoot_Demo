@@ -1,2 +1,2 @@
 *.js linguist-vendored=false
-src/main/resources/static/* linguist-vendored=false
+src//main//resources//static//* linguist-vendored=false
