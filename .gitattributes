@@ -1,2 +1,1 @@
-src/main/resources/* linguist-vendored=false
-generated_html=false
+*.js linguist-language=Java
