@@ -1,1 +1,2 @@
 *.js linguist-language=Kotlin
+*.css linguist-language=Kotlin
